@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "billing-automation"
+dynamic = ["version"]
+description = "Windows desktop tools that automate a weekly medical-billing routine: fee ticket PDFs, OCR and portal record downloads."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "pyautogui",
+    "keyboard",
+    "pytesseract",
+    "pyperclip",
+    "opencv-python",
+    "numpy",
+    "Pillow",
+    "thefuzz",
+    "pymupdf",
+    "winsdk",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pyflakes", "pyinstaller"]
+
+[project.gui-scripts]
+pdf-tickets = "billing_automation.pdf_tickets.app:main"
+auto-work = "billing_automation.auto_work.app:main"
+week-folders = "billing_automation.folder_creator:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "billing_automation.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+billing_automation = ["resources/*.txt"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]

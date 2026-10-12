@@ -1,0 +1,11 @@
+# Labels of the top table of the NextGen Fee Ticket (the same on every ticket).
+# The "OCR" tab uses this list to fix OCR errors in cell labels
+# (e.g. "PATENT" -> "PATIENT", "Tlme" -> "Time"). Patient data is never corrected with it.
+# You can add your own words, e.g. the clinic name and address printed above the table.
+# Lines starting with # are ignored.
+
+LAST NAME FIRST NAME MIDDLE NAME SSN DOB AGE SEX MEDICAL RECORD CREATE DATE SEQ NO
+PATIENT ADDRESS PHONE APPOINTMENT DETAILS Date: Time:
+INSURANCE INFORMATION GROUP NAME GROUP NUMBER POLICY NUMBER EVENT
+RENDERING PHYSICIAN NAME REFERRING PHYSICIAN NAME REFERRING location LAST PRIMARY DX ENCOUNTER
+AMOUNT OF LAST PAYMENT DATE OF LAST PAYMENT CHART BALANCE PATIENT INS BALANCE PATIENT SELF BALANCE Old Chart Number

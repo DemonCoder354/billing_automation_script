@@ -1,0 +1,8 @@
+# Doctor (rendering physician) last names, one per line, in UPPER CASE.
+# Copy this file to doctors.txt and put your real names there - doctors.txt is not committed (.gitignore).
+# The names are used for the folder names (pdf\<DOCTOR>, CAREPORTAL week folders) and to recognize
+# the "Rendering Physician Name" field on the ticket.
+SMITH
+JOHNSON
+WILLIAMS
+BROWN

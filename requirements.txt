@@ -1,0 +1,13 @@
+# AUTO-WORK (screen automation + Tesseract OCR)
+pyautogui
+keyboard
+pytesseract
+pyperclip
+opencv-python
+numpy
+Pillow
+thefuzz
+
+# PDF Tickets (PDF processing + Windows OCR); the program also installs these itself on first run
+pymupdf
+winsdk

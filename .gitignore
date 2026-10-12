@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+
+# Build output (see build.ps1)
+build/
+dist/
+release/
+build.log
+
+# Local configuration (real names)
+/doctors.txt
+/ticket_words.txt
+
+# Runtime data: tickets, settings, calibration, logs, indexes (contain patient information - never commit)
+pdf/
+data/
+*.pdf

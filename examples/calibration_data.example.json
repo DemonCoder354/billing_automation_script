@@ -1,0 +1,84 @@
+{
+  "reg_source_dob": [
+    1644,
+    515,
+    92,
+    24
+  ],
+  "reg_source_name": [
+    1175,
+    516,
+    265,
+    23
+  ],
+  "pt_brown_input": [
+    538,
+    149
+  ],
+  "pt_search_btn": [
+    771,
+    146
+  ],
+  "reg_results": [
+    85,
+    344,
+    182,
+    661
+  ],
+  "reg_red_dots": [
+    1,
+    383,
+    41,
+    620
+  ],
+  "pt_dark_green_btn": [
+    198,
+    279
+  ],
+  "pt_dropdown_opt": [
+    192,
+    345
+  ],
+  "pt_three_dots_btn": [
+    1103,
+    200
+  ],
+  "pt_three_dots_option": [
+    993,
+    260
+  ],
+  "pt_nextgen_center": [
+    1586,
+    545
+  ],
+  "pt_next_arrow": [
+    1209,
+    315
+  ],
+  "reg_ticket_counter": [
+    1853,
+    316,
+    33,
+    12
+  ],
+  "reg_target_color": [
+    743,
+    168,
+    377,
+    27
+  ],
+  "pt_explorer_path": [
+    162,
+    57
+  ],
+  "pt_close_tab": [
+    493,
+    19
+  ],
+  "reg_page_check": [
+    12,
+    127,
+    52,
+    39
+  ]
+}
