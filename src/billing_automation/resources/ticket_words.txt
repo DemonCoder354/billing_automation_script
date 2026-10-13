@@ -1,4 +1,4 @@
-# Labels of the top table of the NextGen Fee Ticket (the same on every ticket).
+# Labels of the top table of the MedLedger Fee Ticket (the same on every ticket).
 # The "OCR" tab uses this list to fix OCR errors in cell labels
 # (e.g. "PATENT" -> "PATIENT", "Tlme" -> "Time"). Patient data is never corrected with it.
 # You can add your own words, e.g. the clinic name and address printed above the table.
