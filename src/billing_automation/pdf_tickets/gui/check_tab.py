@@ -34,7 +34,7 @@ class CheckTab(ttk.Frame):
         ttk.Checkbutton(box, text="The doctor's folder files are currently saved to ('Saving' tab)",
                         variable=self.follow, command=self.tick).grid(
             row=1, column=0, columnspan=3, sticky="w", **pad)
-        ttk.Label(box, text="Tickets in NextGen (N from 'Fee Tickets 1 of N'):").grid(
+        ttk.Label(box, text="Tickets in MedLedger (N from 'Fee Tickets 1 of N'):").grid(
             row=2, column=0, columnspan=2, sticky="w", **pad)
         self.expected = tk.StringVar()
         ttk.Entry(box, textvariable=self.expected, width=8).grid(row=2, column=2, sticky="w", **pad)
