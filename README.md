@@ -1,6 +1,6 @@
 # Billing Automation Script
 
-A set of Windows desktop tools that automate a weekly medical-billing routine: printed **NextGen** fee tickets are turned into searchable PDFs, and for every ticket the matching patient records are found and downloaded from a patient-records web portal (called **CarePortal** here) into a dated folder structure.
+A set of Windows desktop tools that automate a weekly medical-billing routine: printed **MedLedger** fee tickets are turned into searchable PDFs, and for every ticket the matching patient records are found and downloaded from a patient-records web portal (called **CarePortal** here) into a dated folder structure.
 
 The tools were built for a real clinic workflow and replace hours of manual clicking per week.
 
@@ -11,7 +11,7 @@ The tools were built for a real clinic workflow and replace hours of manual clic
 ## How it works
 
 ```
-NextGen ──print──▶ PDF24 printer ──▶ pdf\inbox
+MedLedger ──print──▶ PDF24 printer ──▶ pdf\inbox
                                         │
                      PDF Tickets
                        1. Saving  ─▶ pdf\<DOCTOR>\docN.pdf  +  pdf\pdf_all\<DOCTOR>_docN.pdf
@@ -68,8 +68,8 @@ All three programs keep their data next to the executables:
 ## Weekly workflow
 
 1. **Week Folders** — enter Monday's date (`MMDDYYYY`).
-2. **PDF Tickets → Saving** — set the doctor folders to `<folder>\pdf\<DOCTOR>` (once), choose the doctor, press **Start (F9)** and print the doctor's fee tickets from NextGen. Repeat for every doctor.
-3. **PDF Tickets → Check** — enter the ticket count from NextGen to verify that nothing was lost.
+2. **PDF Tickets → Saving** — set the doctor folders to `<folder>\pdf\<DOCTOR>` (once), choose the doctor, press **Start (F9)** and print the doctor's fee tickets from MedLedger. Repeat for every doctor.
+3. **PDF Tickets → Check** — enter the ticket count from MedLedger to verify that nothing was lost.
 4. **PDF Tickets → OCR** — press **Start**; text PDFs appear in `pdf\pdf_text`.
 5. **AUTO-WORK** — run **Calibration (Ctrl+K)** once (the wizard asks you to point at the website elements; `examples/calibration_data.example.json` shows the file format). Then choose "From PDF files" and press **Start (F6)**. **F9** pauses/resumes, **F10** opens the pause menu. The run resumes from the last finished ticket.
 6. Check the **reconciliation** report at the end of the run (also on the **CarePortal reconciliation** tab).
@@ -136,7 +136,7 @@ billing_automation_script/
 
 ## Limitations
 
-- Built for one specific environment: the portal page layout, the NextGen fee ticket form and the screen coordinates are calibrated for a particular setup.
+- Built for one specific environment: the portal page layout, the MedLedger fee ticket form and the screen coordinates are calibrated for a particular setup.
 - The save step relies on the standard Windows “Save As” dialog (`Alt+N` focuses the *File name* field).
 - Screen automation needs the browser window to stay in place and unobstructed while AUTO-WORK runs.
 
