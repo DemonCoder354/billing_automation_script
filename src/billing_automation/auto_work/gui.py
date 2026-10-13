@@ -89,15 +89,15 @@ class AutoWorkApp:
         self.calib_btn.pack(fill="x", pady=(6, 0))
         self.cal_var.trace_add("write", lambda *_: self._update_cal_info())
 
-        # where to take tickets from: PDF files from the "PDF Tickets" program or the NextGen screen
+        # where to take tickets from: PDF files from the "PDF Tickets" program or the MedLedger screen
         src = ttk.LabelFrame(f, text="Ticket source", padding=8)
         src.pack(fill="x", pady=(10, 0))
         self.source_var = tk.StringVar(value=SETTINGS.get("ticket_source", "pdf"))
         self.source_radios = [
             ttk.Radiobutton(src, text="From PDF files (pdf_text - after the 'PDF Tickets' program)",
                             variable=self.source_var, value="pdf", command=self._update_source),
-            ttk.Radiobutton(src, text="From the NextGen screen (legacy: ► arrow and counter)",
-                            variable=self.source_var, value="nextgen", command=self._update_source),
+            ttk.Radiobutton(src, text="From the MedLedger screen (legacy: ► arrow and counter)",
+                            variable=self.source_var, value="medledger", command=self._update_source),
         ]
         for r in self.source_radios:
             r.pack(anchor="w")
@@ -375,7 +375,7 @@ class AutoWorkApp:
         except Exception as e:
             print(f"[SETTINGS] [ERROR] {e}")
 
-    # Ticket source (PDF / NextGen screen)
+    # Ticket source (PDF / MedLedger screen)
     def _update_source(self):
         """Enables the folder fields only in PDF mode and shows how many tickets there are and where the run will start."""
         pdf = self.source_var.get() == "pdf"

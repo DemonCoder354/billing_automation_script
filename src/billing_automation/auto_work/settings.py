@@ -45,7 +45,7 @@ TIMING_GROUPS = [
         ("search_after_click", 5, "Waiting for results after the search button"),
     ]),
     ("Moving between tickets", [
-        ("after_nextgen_click", 1, "After clicking the center of NextGen"),
+        ("after_medledger_click", 1, "After clicking the center of MedLedger"),
         ("after_next_arrow", 5, "After the 'next ticket' arrow"),
         ("error_pause", 5, "Pause after an error in the main loop"),
     ]),
@@ -106,7 +106,7 @@ def _default_settings():
         "calibration_file": DEFAULT_CALIBRATION_FILE,
         "logs": {"main": ""},
         "timings": {},   # empty = default values (see TIMING_GROUPS)
-        "ticket_source": "pdf",   # 'pdf' - tickets from PDF files, 'nextgen' - from the NextGen screen
+        "ticket_source": "pdf",   # 'pdf' - tickets from PDF files, 'medledger' - from the MedLedger screen
         "pdf_folder": "",         # folder with docN.pdf (empty = default pdf_text folder)
     }
 
@@ -142,7 +142,7 @@ def load_settings():
                     data["logs"][k] = v.strip()
         if isinstance(raw.get("timings"), dict):
             data["timings"] = dict(raw["timings"])
-        if raw.get("ticket_source") in ("pdf", "nextgen"):
+        if raw.get("ticket_source") in ("pdf", "medledger"):
             data["ticket_source"] = raw["ticket_source"]
         if isinstance(raw.get("pdf_folder"), str):
             data["pdf_folder"] = raw["pdf_folder"].strip()

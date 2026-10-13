@@ -15,10 +15,10 @@ from .applog import LOG_DIR
 from .settings import SETTINGS, update_settings
 
 
-# The "PDF Tickets" program (billing_automation.pdf_tickets) saves NextGen tickets as docN.pdf
+# The "PDF Tickets" program (billing_automation.pdf_tickets) saves MedLedger tickets as docN.pdf
 # (N is a running number in print order), copies them to pdf_all as DOCTOR_docN.pdf and
 # OCRs them into pdf_text. In 'pdf' mode AUTO-WORK takes the files from pdf_text one by one -
-# without reading the NextGen screen, without the "next ticket" arrow and without the "Fee Tickets N of M" counter.
+# without reading the MedLedger screen, without the "next ticket" arrow and without the "Fee Tickets N of M" counter.
 
 
 DOC_FILE_RE = re.compile(r"^(?:(.+)_)?doc(\d+)\.pdf$", re.IGNORECASE)   # SMITH_doc5.pdf or doc5.pdf

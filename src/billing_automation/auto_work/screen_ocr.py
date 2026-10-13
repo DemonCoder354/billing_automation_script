@@ -1,4 +1,4 @@
-"""OCR of screen regions: date of birth, patient name and the NextGen ticket counter."""
+"""OCR of screen regions: date of birth, patient name and the MedLedger ticket counter."""
 from __future__ import annotations
 
 import re

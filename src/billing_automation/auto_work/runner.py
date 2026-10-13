@@ -1,4 +1,4 @@
-"""The main work loop: PDF mode (tickets from pdf_text) and NextGen mode (tickets read from the screen)."""
+"""The main work loop: PDF mode (tickets from pdf_text) and MedLedger mode (tickets read from the screen)."""
 from __future__ import annotations
 
 import os
@@ -24,7 +24,7 @@ def main():
     if SETTINGS.get("ticket_source") == "pdf":
         main_pdf(calib)
     else:
-        main_nextgen(calib)
+        main_medledger(calib)
 
 
 def main_pdf(calib):
@@ -91,8 +91,8 @@ def main_pdf(calib):
     ui_queue.put("pdf_done")
 
 
-def main_nextgen(calib):
-    """NextGen mode (as in V30): the ticket is read from the screen, the next one is opened with the ► arrow."""
+def main_medledger(calib):
+    """MedLedger mode (as in V30): the ticket is read from the screen, the next one is opened with the ► arrow."""
     ticket_num = 0
 
     while True:
@@ -123,9 +123,9 @@ def main_nextgen(calib):
             else:
                 print("   [COUNTER] Not recognized - continuing without the limit check.")
 
-            print("\nClicking the center of NextGen to give it focus...")
-            pyautogui.click(calib["pt_nextgen_center"])
-            time.sleep(T("after_nextgen_click"))
+            print("\nClicking the center of MedLedger to give it focus...")
+            pyautogui.click(calib["pt_medledger_center"])
+            time.sleep(T("after_medledger_click"))
             print("Moving to the next ticket (► arrow)...")
             pyautogui.click(calib["pt_next_arrow"])
             time.sleep(T("after_next_arrow"))
