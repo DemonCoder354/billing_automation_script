@@ -14,7 +14,7 @@ _DARK = bytes(1 if v < 200 else 0 for v in range(256))
 def is_blank(path):
     """Blank page: almost no dark pixels on any page.
 
-    When printing "Pages 87 to 87", NextGen sends blank pages instead of pages 1-86.
+    When printing "Pages 87 to 87", MedLedger sends blank pages instead of pages 1-86.
     """
     try:
         import pymupdf

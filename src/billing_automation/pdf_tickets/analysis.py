@@ -31,7 +31,7 @@ def analyze(files, tickets, mtimes, expected):
     mtimes = [mtimes[i] for i in keep]
     n = len(files)
     skipped = ([f"blank pages: {len(blanks)}"] if blanks else []) + ([f"duplicates: {len(dups)}"] if dups else [])
-    lines = [f"Tickets: {n}" + (f", in NextGen: {expected}" if expected else "")
+    lines = [f"Tickets: {n}" + (f", in MedLedger: {expected}" if expected else "")
              + (f" (not counting {', '.join(skipped)})" if skipped else "")]
     if dup_lines:
         lines += ["Duplicates of the same ticket (the extra ones can be deleted):"] + dup_lines
@@ -105,13 +105,13 @@ def analyze(files, tickets, mtimes, expected):
     if found:
         lines.append("")
         lines.append("Where tickets went missing (in print order):")
-        shift = max(unexplained, 0)  # if the first ticket(s) went missing, the NextGen numbers are shifted
+        shift = max(unexplained, 0)  # if the first ticket(s) went missing, the MedLedger numbers are shifted
         for k in found:
             p = places[k]
             reasons = p["reasons"]
             strong = any(r.startswith("missing SEQ") for r in reasons) and any(r.startswith("print pause") for r in reasons)
             mark = "CERTAIN" if strong else "likely"
-            positions = [k + 2 + shift + j for j in range(p["lost"])]  # numbers in NextGen
+            positions = [k + 2 + shift + j for j in range(p["lost"])]  # numbers in MedLedger
             shift += p["lost"]
             nums = ", ".join(str(x) for x in positions)
             lines.append(f"• [{mark}] Fee Tickets {nums}{of}"
